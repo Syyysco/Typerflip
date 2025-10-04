@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    &::selection {
+        background: rgba(0, 0, 0, 0.33);
+        color: #d37796;
+    }
+}
+
+body {
+    font-family: var(--default-font);
+    background: var(--primary-gradient);
+    background-color: #0c0505; /* Util para cambiar el color de la barra de navegación en móviles */
+    min-height: 100vh;
+    color: var(--text-primary);
+    overflow-x: hidden;
+    position: relative;
+    &.menu-open {
+        overflow-y: hidden;
+        padding-right: var(--scrollbar-width);
+
+        & .input-section {
+            padding-right: calc(var(--scrollbar-width) + 20px);
+        }
+    }
+}
+
+html, body {
+    /* Prevenir scroll automático en móviles */
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 50px;
+    position: relative;
+    z-index: 1;
+    transition: margin-top .3s;
+}
+
+/*
+
+© 2025 Typerflip. All rights reserved.
+
+ - This software is provided under a proprietary license.
+   You may use this software for personal and educational purposes only.
+   Commercial use, modification, and redistribution are strictly prohibited
+   without explicit written permission.
+
+ - For licensing inquiries: syscodev@proton.me
+ - License violations will be prosecuted to the full extent of the law.
+
+ - AUTHOR: Jose Fco. López (aka Sysco)
+        Github:     [ https://github.com/Syyysco ] @Syyysco
+        Portfolio:  [ https://syyysco.github.io ]
+ 
+ - APP: Typerflip - Social editor:
+        Repo:       [ https://github.com/Syyysco/Typerflip ]
+        Web:        [ https://Syyysco.github.io/Typerflip ]
+
+*/

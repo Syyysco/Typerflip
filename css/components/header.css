@@ -1,0 +1,105 @@
+/*
+
+© 2025 Typerflip. All rights reserved.
+
+ - This software is provided under a proprietary license.
+   You may use this software for personal and educational purposes only.
+   Commercial use, modification, and redistribution are strictly prohibited
+   without explicit written permission.
+
+ - For licensing inquiries: syscodev@proton.me
+ - License violations will be prosecuted to the full extent of the law.
+
+ - AUTHOR: Jose Fco. López (aka Sysco)
+        Github:     [ https://github.com/Syyysco ] @Syyysco
+        Portfolio:  [ https://syyysco.github.io ]
+ 
+ - APP: Typerflip - Social editor:
+        Repo:       [ https://github.com/Syyysco/Typerflip ]
+        Web:        [ https://Syyysco.github.io/Typerflip ]
+
+*/
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-gradient);
+    backdrop-filter: var(--blur);
+    border-bottom: 1px solid var(--glass-bg);
+    position: fixed;
+    top: 0;
+    min-width: 200px;
+    overflow-x: hidden;
+    width: 100%;
+    padding: 20px 20px 20px 20px;
+    left: 0;
+    transform: translateY(0);
+    transition: all .3s ease;
+    z-index: 10000;
+    animation: slideDown 0.8s ease-out;
+    
+    & .logo-heading {
+        position: relative;
+        display: flex;
+        width: 150px;
+        opacity: 0.5;
+        transition: all .3s ease;
+    
+        & img {
+            display: flex;
+            width: 100%;
+            align-content: center;
+        }
+
+        & .version-info {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            color: var(--text-terciary);
+            opacity: 0.6;
+            font-size: 0.8rem;
+            font-weight: 300;
+            max-width: 600px;
+            transform: translate(120%, 2px);
+            font-family: monospace;
+            transition: all .3s ease;
+        }
+    }
+
+    & .header-buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+
+        & a {
+            font-family: var(--default-font);
+            font-size: 14px;
+            border-radius: 8px;
+            opacity: 0.5;
+            color: var(--text-terciary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 
+                all .3s ease,
+                transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            & i {
+                font-size: 22px;
+                line-height: 1;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            &:hover {
+                opacity: 0.9;
+                padding: 6px 12px;
+                background: rgba(255, 255, 255, 0.2);
+                transform: translateY(-1px);
+                box-shadow: var(--shadow-sm);
+            }
+        }
+    }
+}

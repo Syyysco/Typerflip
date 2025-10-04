@@ -1,0 +1,527 @@
+/* Responsive */
+/* Animaciones para teclado móvil */
+@supports (padding: max(0px)) {
+    .input-section {
+        padding-bottom: max(20px, env(safe-area-inset-bottom));
+    }
+}
+
+@media (max-width: 1024px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+        /*gap: 20px;*/
+    }
+
+    .sidebar {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .platforms-panel,
+    .analysis-panel {
+        min-width: 300px;
+        flex-shrink: 0;
+        width: calc(50% - 10px); /* - padding y gap */
+        
+    }
+}
+
+@media (max-width: 768px) {    
+    .container {
+        padding: 15px;
+    }
+
+    .sidebar {
+        flex-direction: column;
+        overflow-x: visible;
+    }
+
+    .platforms-panel,
+    .analysis-panel {
+        min-width: auto;
+        width: auto;
+    }
+
+    .platforms-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-panel,
+    .platforms-panel,
+    .analysis-panel {
+        border-radius: 16px;
+    }
+
+    .input-section {
+        padding: 15px;
+    }
+
+    body.menu-open {
+        & .input-section {
+            padding-right: calc(var(--scrollbar-width) + 15px);
+        }
+    }
+
+
+    .input-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    #textInput {
+        padding-right: 100px;
+    }
+
+    .input-action-btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .platform-item {
+        padding: 12px;
+    }
+
+    .platform-name {
+        font-size: 0.9rem;
+    }
+
+    .platform-limit {
+        font-size: 0.75rem;
+    }
+
+    .output-title {
+        display: none;
+    }
+
+    .export-buttons {
+        margin: auto;
+        gap: 10px;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        & .generic-btn {
+            padding: 10px 20px;
+            width: auto;
+        }
+    }
+
+    .output-header {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body.menu-open {
+        padding-right: 0;
+    }
+
+    .platforms-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tab-btn {
+        padding: 10px;
+    }
+
+    #textInput {
+        padding: 15px 20px;
+    }
+
+    #editorSymbolPicker {
+        max-width: calc(100% - 30px) !important; /* 15px lateral de padding del .container */
+        width: calc(100% - 30px) !important; /* 15px lateral de padding del .container */
+        & .symbol-grid {
+            grid-template-columns: repeat(7, 1fr) !important;
+            & .symbol-item {
+                &:hover {
+                    background: transparent !important;
+                    transform: scale(1) !important;
+                }
+                &:active {
+                    background: var(--glass-border) !important;
+                    transform: scale(0.9) !important;
+                }
+            }
+        }
+    }
+
+    .editor-textarea-container.with-symbol-picker {
+        border-radius: 0px;
+    }
+
+    .notification-container {
+        width: calc(100% - 40px); /* ocupará todo el ancho - right: 20px + 20px de espacio izquierdo + 20px de espacio izquierdo de la notificacion */
+        
+        & .notification {
+            max-width: 100%;
+            & .notification-icon {
+                font-size: 1.3em;
+            }
+
+            & .notification-text {
+                font-size: 0.75em;
+            }
+        }
+    }
+
+    .templates-header-subtitle {
+        margin: 12px 0 0;
+        font-size: 0.75rem !important;
+    }
+
+    .with-tooltip::after,
+    button[data-tooltip]::after {
+        display: none;
+    }
+
+    /* Ajuste para el :hover y :active de los elementos en móviles */
+    #showGuideBtn {
+        &:hover {
+            &:not(:active) {
+                color: #fafaff86;
+                padding-bottom: 6px;
+            }
+            &:active {
+                color: #fafaff;
+                padding-bottom: 10px;
+            }
+        }
+    }
+
+    .card-btn:hover {
+        background: var(--glass-bg) !important;
+        transform: translate(0) !important;
+    }
+    .save-btn:hover,
+    .card-use-btn:hover {
+        background: linear-gradient(135deg, #614888 0%, #8b2d3d 100%) !important;
+        transform: translate(0) !important;
+        box-shadow: none;
+    }
+    .card-btn:active {
+        background: var(--glass-border) !important;
+        transform: scale(0.9) !important;
+    }
+    .card-use-btn:active,
+    .save-btn:active {
+        transform: scale(0.9) !important;
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+    }
+
+    #newTemplateBtn:hover {
+        background: rgba(255, 255, 255, 0.03) !important;
+    }
+    #newTemplateBtn:active {
+        background: rgba(255, 255, 255, 0.08) !important;
+        transform: scale(0.9) !important;
+    }
+
+    .close-btn:hover {
+        background: rgba(0, 0, 0, 0.3) !important;
+    }
+    .close-btn:active {
+        background: rgba(255, 255, 255, 0.08) !important;
+        transform: scale(0.9) !important;
+    }
+
+    .generic-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translate(0);
+    }
+
+    .solid-btn:hover {
+        background: transparent;
+        transform: translate(0);
+    }
+
+    .generic-btn:active,
+    .solid-btn:active {
+        background: rgba(255, 255, 255, 0.15);
+        transform: scale(0.9);
+    }
+
+    .tab-btn:active {
+        transform: scale(0.85);
+        background: var(--glass-bg);
+        &.active {
+            transform: scale(0.95);
+        background: var(--glass-border);
+        }
+    }
+
+    .header-buttons a:hover:not(:active) {
+        opacity: 0.5;
+        padding: 0;
+        background: transparent;
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    .header-buttons a:active {
+        opacity: 0.9;
+        padding: 6px 12px;
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-1px) scale(0.95);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .template-card {
+        &:hover {
+            transform: translateY(-2px) !important;
+            background: rgba(255, 255, 255, 0.09) !important;
+        }
+    }
+}
+
+@media (max-width: 430px) {
+    #githubBtn::after {
+        display: none;
+    }
+    .output-section {
+        padding-top: 10px;
+        padding-bottom: 50px;
+
+        & .export-buttons {
+            padding: 10px 0;
+            & button {
+                font-size: 11px;
+            }
+        }
+    }
+}
+
+@media (max-width: 384px) {
+    .tab-btn {
+        font-size: 11px;
+    }
+
+    #editorSymbolPicker {
+        & .symbol-grid {
+            grid-template-columns: repeat(6, 1fr) !important;
+            & .symbol-item {
+                width: 27px;
+                height: 27px;
+                font-size: 16px !important;
+            }
+        }
+    }
+
+    #saveTemplateBtn::before,
+    #exportTemplateBtn::before,
+    #mainCopyBtn::before { 
+        font-family: 'Font Awesome 7 Free';
+        font-weight: 900;
+        font-size: 12px;
+    }
+    #saveTemplateBtn::before { content: '\f0c7'; }
+    #exportTemplateBtn::before { content: '\f309'; }
+    #mainCopyBtn::before { content: '\f0c5'; }
+
+    .templates-header-title {
+        font-size: 1rem !important;
+    }
+    .templates-header-subtitle {
+        font-size: 0.7rem !important;
+    }
+    #newTemplateBtn,
+    .close-btn {
+        font-size: 0.6rem !important;
+        padding: 7px !important;
+    }
+    #newTemplateBtn {
+        top: 10px !important;
+        left: 10px !important;
+    }
+    .close-btn {
+        top: 10px !important;
+        right: 10px !important;
+    }
+
+    .templates-menu-header {
+        padding: 18px 20px 15px !important;
+    }
+    .template-title {
+        font-size: 0.85rem !important ;
+    }
+    .template-description {
+        font-size: 0.65rem !important;
+    }
+    .template-preview-line,
+    .template-content-display {
+        font-size: 0.65rem !important;
+    }
+    .card-btn,
+    .card-use-btn,
+    #editTemplateSaveBtn,
+    #editTemplateCancelBtn {
+        font-size: 0.6rem !important;
+    }
+    .edit-template-form-input {
+        font-size: 0.7rem !important;
+    }
+
+    .guide-section {
+        padding: 10px;
+        & h3 {
+            font-size: 15px;
+        }
+        & p, & code, & td {
+            font-size: 0.7rem;
+        }
+    }
+}
+
+@media (max-width: 300px) {
+    header {
+        & #githubBtn i {
+            font-size: 20px;
+        }
+    
+        & .logo-heading {
+            scale: 0.9;
+        }
+    }
+
+    #editorSymbolPicker .symbol-grid {
+        grid-template-columns: repeat(5, 1fr) !important;
+    }
+
+    #showGuideBtn {
+        &::after {
+            content: 'Guía';
+        }
+        &.active::after {
+            content: 'Cerrar';
+        }
+    }
+}
+
+@media (max-width: 279px) {
+    .notification-container {
+        display: none;
+    }
+
+    .header {
+        justify-content: center;
+        & #githubBtn {
+            display: none;
+        }
+    
+        & .logo-heading {
+            margin: auto;
+
+            & .version-info {
+                position: relative;
+                transform: translate(0, 40%) scale(0.8);
+            }
+        }
+    }
+
+    .guide-section {
+        & h3 {
+            font-size: 13.5px;
+        }
+        & p, & code, & td {
+            font-size: 0.55rem;
+        }
+    }
+
+    #newTemplateBtn {
+        display: none !important;
+    }
+
+    .input-section {
+        & #textInput {
+            font-size: 14px;
+        }
+        & .editor-char-counter {
+            top: 20px;
+            right: 10px;
+            font-size: 0.67rem;
+        }
+        & .save-indicator {
+            top: 20px;
+        }
+        & button::before {
+            font-size: 13px;
+        }
+    }
+
+    #compatibilityText::after {
+        display: none !important;
+    }
+}
+
+@media (max-width: 247px) {
+    #saveTemplateBtn::before,
+    #exportTemplateBtn::before,
+    #mainCopyBtn::before { 
+        font-size: 11px;
+    }
+
+    .formatted-output {
+        font-size: 14px;
+    }
+
+    #templatesMenu,
+    #saveTemplateBtn,
+    #inputTemplatesBtn,
+    #templatesOverlay {
+        display: none !important;
+    }
+
+    #editorSymbolPicker {
+        & .symbol-grid {
+            grid-template-columns: repeat(4, 1fr) !important;
+        }
+    }
+
+    .analysis-panel {
+        & .analysis-label,
+        & .analysis-value {
+            font-size: 0.8rem;
+        }
+    }
+
+    .guide-section {
+        & h3 {
+            font-size: 10px;
+        }
+        & p, & code, & td {
+            font-size: 0.4rem;
+        }
+    }
+}
+
+@media (max-height: 1500px) {
+    .platforms-grid {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+}
+
+/*
+
+© 2025 Typerflip. All rights reserved.
+
+ - This software is provided under a proprietary license.
+   You may use this software for personal and educational purposes only.
+   Commercial use, modification, and redistribution are strictly prohibited
+   without explicit written permission.
+
+ - For licensing inquiries: syscodev@proton.me
+ - License violations will be prosecuted to the full extent of the law.
+
+ - AUTHOR: Jose Fco. López (aka Sysco)
+        Github:     [ https://github.com/Syyysco ] @Syyysco
+        Portfolio:  [ https://syyysco.github.io ]
+ 
+ - APP: Typerflip - Social editor:
+        Repo:       [ https://github.com/Syyysco/Typerflip ]
+        Web:        [ https://Syyysco.github.io/Typerflip ]
+
+*/

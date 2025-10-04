@@ -1,0 +1,29 @@
+{
+  "server": {
+    "enabled": true,
+    "port": 8080
+  },
+  "autoOpenBrowser": true,
+  "minify": {
+    "js": true,
+    "css": true,
+    "images": true
+  },
+  "files": {
+    "ignoreAssetsPaths": [
+      "assets/fonts/FontAwesome7.0.0",
+      "assets/img"
+    ],
+    "requiredFiles": [
+      "dist/index.html",
+      "dist/css/styles.min.css",
+      "dist/css/fontawesome.min.css",
+      "dist/js/bundle.js",
+      "dist/fonts",
+      "dist/assets/brand",
+      "node_modules",
+      "package-lock.json",
+      "package.json"
+    ]
+  }
+}

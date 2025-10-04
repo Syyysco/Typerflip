@@ -1,0 +1,52 @@
+/* Scrollbar de la página */
+::-webkit-scrollbar { width: var(--scrollbar-width); }
+::-webkit-scrollbar-track { background: linear-gradient(135deg, #1d0d12 0%, #1b212c 100%); }
+::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.45); }
+::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 0.6); }
+
+/* Scrollbar de todos las areas de texto, etc */
+.scroll-item::-webkit-scrollbar { 
+    width: 21px; /* 7px scrollbar + 7px border a cada lado */
+}
+.scroll-item::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color);
+    border-radius: 10px;
+    border: 7px solid transparent;
+    background-clip: content-box;
+    min-height: 25px;
+}
+.scroll-item::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-color-hover);
+    border-radius: 10px;
+    border: 7px solid transparent;
+    background-clip: content-box;
+    min-height: 25px;
+}
+.scroll-item::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+    border-radius: 10px;
+    border: 7px solid transparent;
+    background-clip: content-box;
+}
+
+/*
+
+© 2025 Typerflip. All rights reserved.
+
+ - This software is provided under a proprietary license.
+   You may use this software for personal and educational purposes only.
+   Commercial use, modification, and redistribution are strictly prohibited
+   without explicit written permission.
+
+ - For licensing inquiries: syscodev@proton.me
+ - License violations will be prosecuted to the full extent of the law.
+
+ - AUTHOR: Jose Fco. López (aka Sysco)
+        Github:     [ https://github.com/Syyysco ] @Syyysco
+        Portfolio:  [ https://syyysco.github.io ]
+ 
+ - APP: Typerflip - Social editor:
+        Repo:       [ https://github.com/Syyysco/Typerflip ]
+        Web:        [ https://Syyysco.github.io/Typerflip ]
+
+*/

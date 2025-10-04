@@ -1,0 +1,107 @@
+.icon-element::before {
+    font-family: 'Font Awesome 7 Free';
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-terciary);
+}
+
+.unselectable-item, button, label, span {
+    -webkit-appearance: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    appearance: none;
+}
+
+.one-line-element {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.left-divisor {
+    margin-left: auto;
+}
+
+.textarea-wrapper {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 4px;
+        right: 0;
+        width: 23px;
+        height: 23px;
+        background: black;
+        border-radius: 7px 0 0 0;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    &::after {
+        content: '\f141';
+        font-family: "Font Awesome 7 Free";
+        font-weight: 900;
+        position: absolute;
+        bottom: 9px;
+        right: 6px;
+        pointer-events: none;
+        color: var(--glass-border);
+        font-size: 12px;
+        z-index: 10;
+        transform: rotate(-45deg);
+    }
+
+    & textarea{
+        scrollbar-gutter: stable;
+        font-family: var(--default-font);
+        &::-webkit-resizer {
+            background: transparent !important;
+            border-radius: 8px !important;
+            visibility: hidden !important;
+            display: none !important;
+            opacity: 0 !important;
+            width: 0 !important;
+            height: 0 !important;
+        }
+    }
+}
+
+/*
+
+© 2025 Typerflip. All rights reserved.
+
+ - This software is provided under a proprietary license.
+   You may use this software for personal and educational purposes only.
+   Commercial use, modification, and redistribution are strictly prohibited
+   without explicit written permission.
+
+ - For licensing inquiries: syscodev@proton.me
+ - License violations will be prosecuted to the full extent of the law.
+
+ - AUTHOR: Jose Fco. López (aka Sysco)
+        Github:     [ https://github.com/Syyysco ] @Syyysco
+        Portfolio:  [ https://syyysco.github.io ]
+ 
+ - APP: Typerflip - Social editor:
+        Repo:       [ https://github.com/Syyysco/Typerflip ]
+        Web:        [ https://Syyysco.github.io/Typerflip ]
+
+*/

@@ -1,0 +1,22 @@
+# Robots.txt para Typerflip
+User-agent: *
+Allow: /
+
+# Permitir acceso a recursos estáticos
+Allow: /css/
+Allow: /js/
+Allow: /assets/brand/
+
+# Bloquear archivos sensibles
+Disallow: /*.json$
+Disallow: /manifest.json
+
+# Bloquear parámetros de tracking
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+
+# Sitemap
+Sitemap: https://github.com/Syyysco/Typerflip/sitemap.xml
+
+# Crawl delay para problemas de rendimiento
+# Crawl-delay: 1

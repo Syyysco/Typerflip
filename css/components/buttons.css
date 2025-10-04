@@ -1,0 +1,175 @@
+/*
+
+© 2025 Typerflip. All rights reserved.
+
+ - This software is provided under a proprietary license.
+   You may use this software for personal and educational purposes only.
+   Commercial use, modification, and redistribution are strictly prohibited
+   without explicit written permission.
+
+ - For licensing inquiries: syscodev@proton.me
+ - License violations will be prosecuted to the full extent of the law.
+
+ - AUTHOR: Jose Fco. López (aka Sysco)
+        Github:     [ https://github.com/Syyysco ] @Syyysco
+        Portfolio:  [ https://syyysco.github.io ]
+ 
+ - APP: Typerflip - Social editor:
+        Repo:       [ https://github.com/Syyysco/Typerflip ]
+        Web:        [ https://Syyysco.github.io/Typerflip ]
+
+*/
+
+button:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.generic-btn {
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateX(-2px);
+        box-shadow: var(--shadow-sm);
+    }
+}
+
+#githubBtn::after {
+    content: 'Ver en Github';
+}
+
+.input-action-btn {
+    display: flex;
+    padding: 7px 14px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    color: var(--text-terciary);
+    cursor: pointer;
+    font-weight: 500;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+    &:hover {
+        background: var(--glass-border);
+        transform: scale(0.99) translateY(-3px);
+    }
+}
+
+.solid-btn {
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+.symbol-btn {
+    &.hidden {
+        display: none;
+    }
+    &::before {
+        content: '\f59b';
+    }
+}
+
+.open-templates-btn {
+    font-size: 15px;
+    &::before {
+        content: '\2b'; margin-right: 5px;
+    }
+}
+
+.editor-expand-btn {
+    &::before { content: '\f424'; }
+    &.expanded::before { content: '\f422'; }
+}
+
+#showGuideBtn {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    padding: 6px 10px;
+    border-radius: 8px 8px 0 0;
+    color: #fafaff86;
+    background: #130e0e;
+    backdrop-filter: brightness(0.5);
+    z-index: 1001;
+    cursor: pointer;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.4);
+    transform: translate(calc(-50% - 10px), 0); /* -10px para compensar el tamaño de la scrollbar */
+    transition: all .3s ease;
+    &::before, &::after { vertical-align: middle; color: inherit; }
+    &::before {
+        content: '\f106';
+        margin-right: 10px;
+    }
+    &::after {
+        content: 'Mostrar guía';
+    }
+    &:hover {
+        color: #fafaff;
+        padding-bottom: 10px;
+    }
+    &.active{
+        transform: translate(calc(-50% - 10px), -155px);
+        &:hover {
+            padding-bottom: 2px;
+        }
+
+        &::before {
+            content: '\f107';
+        }
+        &::after {
+            content: 'Cerrar guía';
+        }
+    }
+}
+
+#saveTemplateBtn::before { content: 'Guardar plantilla'; }
+#exportTemplateBtn::before { content: 'Descargar'; }
+#mainCopyBtn::before { content: 'Copiar'; }
+
+/*.editor-settings-btn::before { content: '\f1de'; }*/
+
+.symbol-btn,
+.open-templates-btn,
+.editor-expand-btn {
+    opacity: 0.6;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 8px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: var(--text-terciary);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transform: scale(0.94);
+    transition: 
+        all 0.2s ease,
+        background .3s ease,
+        transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    &.active { 
+        background: var(--glass-border);
+        transform: scale(1);
+    }
+}
+
+/* Estados de carga para botones */
+.generic-btn:active,
+.solid-btn:active,
+.tab-btn:active {
+    transform: scale(0.98);
+}

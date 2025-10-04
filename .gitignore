@@ -1,0 +1,14 @@
+# Directorio de dependencias de Node
+node_modules/
+
+# Archivo de bloqueo de dependencias
+package-lock.json
+
+# Archivo o directorio específico para el desarrollo de la aplicación móvil con electron-builder
+typerflip_desktop/
+
+# Carpeta de construcción de npm
+dist/
+
+# Esto ignorará 'test', 'Test', 'TEST', etc.
+[tT][eE][sS][tT]

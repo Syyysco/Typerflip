@@ -1,0 +1,127 @@
+/*
+
+© 2025 Typerflip. All rights reserved.
+
+ - This software is provided under a proprietary license.
+   You may use this software for personal and educational purposes only.
+   Commercial use, modification, and redistribution are strictly prohibited
+   without explicit written permission.
+
+ - For licensing inquiries: syscodev@proton.me
+ - License violations will be prosecuted to the full extent of the law.
+
+ - AUTHOR: Jose Fco. López (aka Sysco)
+        Github:     [ https://github.com/Syyysco ] @Syyysco
+        Portfolio:  [ https://syyysco.github.io ]
+ 
+ - APP: Typerflip - Social editor:
+        Repo:       [ https://github.com/Syyysco/Typerflip ]
+        Web:        [ https://Syyysco.github.io/Typerflip ]
+
+*/
+
+/* Área de salida */
+.output-section {
+    padding: 30px 0;
+    min-height: 300px;
+    height: 300px;
+    max-height: 300px;
+    transition: all .3s ease;
+}
+
+.output-header {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 30px;
+}
+
+.output-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.export-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.formatted-output {
+    background: transparent;
+    padding: 0 0 0 30px;
+    margin-right: 5px;
+    min-height: 200px;
+    line-height: 1.6;
+    font-size: 16px;
+    height: calc(100% - 25px);
+    scrollbar-gutter: stable;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    position: relative;
+    overflow-y: auto;
+    color: var(--output-text-color);
+    transition: all .3s ease;
+    &.with-guide {
+        height: calc(100% - 180px);
+    }
+    &.with-placeholder {
+        color: var(--text-placeholder-color);
+    }
+}
+
+/* Texto de ayuda inferior */
+.guide-section {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #130e0e;
+    text-align: center;
+    border: 4px solid transparent;
+    margin-top: 30px;
+    z-index: 1000;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    max-height: 155px;
+    padding: 20px;
+    transition: all .3s;
+    &.hidden {
+        max-height: 0;
+        border: none;
+        padding: 0;
+    }
+}
+
+.guide-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+
+    & p {
+        opacity: 0.7;
+        font-size: 0.85rem;
+        margin-bottom: 0.5em;
+    }
+    & code {
+        background: rgba(0, 0, 0, 0.21);
+        border-radius: 7px;
+        padding: 3px;
+    }
+    & table {
+        border-collapse: collapse;
+        margin: 0 auto;
+        font-size: 0.95rem;
+        & td {
+            padding: 4px 12px;
+        }
+        .table-right::before { content: '\f142'; opacity: 0.5; }
+    }
+}
+
+

@@ -1,0 +1,107 @@
+/*
+
+© 2025 Typerflip. All rights reserved.
+
+ - This software is provided under a proprietary license.
+   You may use this software for personal and educational purposes only.
+   Commercial use, modification, and redistribution are strictly prohibited
+   without explicit written permission.
+
+ - For licensing inquiries: syscodev@proton.me
+ - License violations will be prosecuted to the full extent of the law.
+
+ - AUTHOR: Jose Fco. López (aka Sysco)
+        Github:     [ https://github.com/Syyysco ] @Syyysco
+        Portfolio:  [ https://syyysco.github.io ]
+ 
+ - APP: Typerflip - Social editor:
+        Repo:       [ https://github.com/Syyysco/Typerflip ]
+        Web:        [ https://Syyysco.github.io/Typerflip ]
+
+*/
+
+.notification-container {
+    position: fixed;
+    top: var(--notification-offset-top);
+    right: 20px;
+    z-index: 10001;
+    pointer-events: none;
+    width: 350px;
+    transition: height 0.3s ease;
+    
+    & .notification {
+        position: relative;
+        margin-bottom: 10px;
+        padding: 16px 24px 16px 16px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 16px;
+        box-shadow: var(--shadow-lg);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        max-width: 350px;
+        word-wrap: break-word;
+        border: 1px solid var(--glass-border);
+        backdrop-filter: blur(15px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(100%) translateY(0);
+        pointer-events: auto;
+        cursor: pointer;
+        /* Transiciones para entrada y salida */
+        opacity: 1;
+        max-height: 500px;
+        overflow: hidden;
+        &.entering {
+            /*transform: translateY(-20px);*/
+            opacity: 0;
+            max-height: 0;
+            margin-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        
+        &.show {
+            transform: translateX(0);
+        }
+
+        &.hide {
+            transform: translateX(100%);
+            opacity: 0;
+            max-height: 0;
+            margin-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        & .notification-icon {
+            font-size: 1.4em;
+            flex-shrink: 0;
+        }
+
+        & .notification-text {
+            font-size: 0.85em;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            overflow: hidden;
+            word-break: break-all;
+            text-overflow: ellipsis;
+            line-height: 1.4;
+            color: var(--text-terciary);
+        }
+
+        & .notification-progress {
+            position: absolute;
+            bottom: 5px;
+            left: 5%;
+            height: 3px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            width: 90%;
+            opacity: 0.1;
+            transition: width linear;
+        }
+    }
+}

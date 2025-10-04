@@ -1,0 +1,32 @@
+{
+  "name": "Typerflip",
+  "short_name": "Typerflip",
+  "description": "Dale formato a tus ideas para redes sociales. Convierte texto plano en publicaciones atractivas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0505",
+  "theme_color": "#0c0505",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    {
+      "src": "assets/brand/app-icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/brand/app-icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/brand/app-icons/apple-touch-icon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

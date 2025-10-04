@@ -1,0 +1,67 @@
+/*
+
+© 2025 Typerflip. All rights reserved.
+
+ - This software is provided under a proprietary license.
+   You may use this software for personal and educational purposes only.
+   Commercial use, modification, and redistribution are strictly prohibited
+   without explicit written permission.
+
+ - For licensing inquiries: syscodev@proton.me
+ - License violations will be prosecuted to the full extent of the law.
+
+ - AUTHOR: Jose Fco. López (aka Sysco)
+        Github:     [ https://github.com/Syyysco ] @Syyysco
+        Portfolio:  [ https://syyysco.github.io ]
+ 
+ - APP: Typerflip - Social editor:
+        Repo:       [ https://github.com/Syyysco/Typerflip ]
+        Web:        [ https://Syyysco.github.io/Typerflip ]
+
+*/
+
+/* Panel de análisis */
+.analysis-panel {
+    background: var(--glass-bg);
+    backdrop-filter: var(--blur);
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-lg);
+    padding: 25px;
+}
+
+#analysisContentTitle::before { content: '\e473'; }
+
+.analysis-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition:
+        background-color .2s ease,
+        padding .2s ease,
+        border-bottom .2s ease;
+    
+    &:first-child:hover { border-radius: 8px; }
+    &:last-child,
+    &:last-child:hover { border-bottom: none; }
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 0 0 8px 8px;
+        padding: 10px 7px;
+        border-bottom: 1px solid transparent;
+    }
+}
+
+.analysis-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+.analysis-value {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    font-size: 0.9rem;
+}

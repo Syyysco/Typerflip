@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 height=device-height, maximum-scale=1.0, user-scalable=no viewport-fit=cover">
+    <link rel="canonical" href="https://Syyysco.github.io/Typerflip">
+    <title>Typerflip</title>    
+    <!-- Structured Data básico -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Typerflip",
+        "description": "Dale formato a tus ideas para redes sociales",
+        "url": "https://Syyysco.github.io/Typerflip",
+        "applicationCategory": "UtilityApplication"
+    }
+    </script>
+
+    <!-- Security headers -->
+    <!--(No es necesario por el momento) <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self';">-->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <!-- SEO -->
+    <link rel="manifest" href="/manifest.json?v=2">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Typerflip: Dale formato a tus ideas para redes sociales. Convierte texto plano en publicaciones atractivas.">
+    <meta name="keywords" content="formatear texto, redes sociales, publicaciones, biografías, negritas, listas, emojis, contenido atractivo, editor de texto, Typerflip">
+    <meta name="author" content="Jose F. López (aka Sysco)">
+    <meta name="theme-color" content="#0c0505">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Typerflip">
+
+    <!-- FAVICONS E ICONOS -->
+    <!-- Favicon principal -->
+    <link rel="icon" type="image/x-icon" href="/assets/brand/app-icons/favicon.ico">
+    <!-- PNG Favicons para diferentes tamaños -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/app-icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/app-icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/brand/app-icons/favicon-96x96.png">
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/app-icons/apple-touch-icon-180x180.png?v=2">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/brand/app-icons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/brand/app-icons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/brand/app-icons/apple-touch-icon-120x120.png">
+
+    <!-- Android Chrome Icons (PWA) -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/brand/app-icons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/brand/app-icons/android-chrome-512x512.png">
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#0c0505">
+    <meta name="msapplication-TileImage" content="/assets/brand/app-icons/mstile-144x144.png">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <!-- Safari Pinned Tab -->
+    <link rel="mask-icon" href="/assets/brand/app-icons/safari-pinned-tab.svg" color="#BE2642">
+
+    <!-- Open Graph y Twitter Icons -->
+    <meta property="og:image" content="/assets/brand/app-icons/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta name="twitter:image" content="/assets/brand/app-icons/og-image.png">
+    <meta name="twitter:image:alt" content="Typerflip - Formatea tus ideas para redes sociales">
+    
+    <!-- Open Graph Info -->
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="Typerflip">
+    <meta property="og:title" content="Typerflip">
+    <meta property="og:description" content="Typerflip: Dale formato a tus ideas para redes sociales. Convierte texto plano en publicaciones atractivas.">
+    <meta property="og:url" content="https://Syyysco.github.io/Typerflip">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Info -->
+    <meta name="twitter:title" content="Typerflip">
+    <meta name="twitter:domain" content="https://Syyysco.github.io/Typerflip">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="Typerflip: Dale formato a tus ideas para redes sociales. Convierte texto plano en publicaciones atractivas.">
+    <meta name="twitter:site" content="@syyysco">
+    <meta name="twitter:creator" content="@syyysco">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="/assets/fonts/FontAwesome7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- JS -->
+    <script defer src="/js/app.js" type="module"></script>
+</head>
+<body>
+    
+    <div class="particles" id="particles"></div> <!-- Partículas de fondo -->
+    <div class="notification-container" id="notificationContainer"></div> <!-- Contenedor de notificaciones -->
+    <header class="header"> <!-- Header flotante -->
+        <div class="logo-heading">
+            <h1>
+                <img src="/assets/brand/banner.svg"
+                    alt="Typerflip - Formateador de textos"/>
+                <span class="visually-hidden">Typerflip - Formateador de textos para redes sociales</span>
+            </h1>
+            <p class="version-info unselectable-item notranslate"
+                aria-label="Versión de la aplicación"
+                translate="no"
+                data-translate="no">
+                v1.0
+            </p>
+        </div>
+        <div class="header-buttons">
+            <a href="https://github.com/Syyysco/Typerflip"
+                class="solid-btn icon-element"
+                id="githubBtn"
+                aria-label="Ver código fuente en Github"
+                target="_blank"
+                rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+    </header>
+    <div class="container"> <!-- Contenedor principal -->
+        <div class="main-layout">
+            <!-- Panel Principal -->
+            <div class="main-panel">
+                <!-- Área de salida -->
+                <section class="output-section">
+                    <div class="output-header">
+                        <h2 class="output-title unselectable-item">Dale formato a tus ideas ...</h2>
+                        <div class="export-buttons left-divisor">
+                            <button class="generic-btn" id="saveTemplateBtn" data-tooltip="Guardar como nueva plantilla" role="button" aria-label="Guardar plantilla" aria-pressed="false"></button>
+                            <button class="generic-btn" id="exportTemplateBtn" data-tooltip="Exportar como texto plano" role="button" aria-label="Descargar como texto plano" aria-pressed="false"></button>
+                            <button class="generic-btn" id="mainCopyBtn" data-tooltip="Copiar al portapapeles" role="button" aria-label="Copiar al portapapeles" aria-pressed="false"></button>
+                        </div>
+                    </div>
+                    <div class="formatted-output scroll-item notranslate"
+                        id="output"
+                        role="region"
+                        aria-live="polite"
+                        aria-label="Texto formateado"
+                        translate="no"
+                        data-translate="no">
+                        Escribe algo en el área de texto para ver la magia ...
+                    </div>
+                </section>
+                <!-- Sección placeholder -->
+                <button class="solid-btn icon-element" id="showGuideBtn" role="button" aria-label="Abrir guía rápida" aria-pressed="false"></button> <!-- Botón para mostras la sección placeholder -->
+                <section class="guide-section scroll-item hidden">
+                    <div class="guide-text unselectable-item">
+                        <!-- Format guide -->
+                        <h3>Guía Rápida de Formato</h3>
+                        <p>Dale estilo a tu texto con los atajos:</p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><code>**Texto**</code></td>
+                                    <td class="icon-element table-right"></td>
+                                    <td><strong>Negrita</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><code>*Texto*</code></td>
+                                    <td class="icon-element table-right"></td>
+                                    <td><em>Cursiva</em></td>
+                                </tr>
+                                <tr>
+                                    <td><code>1. Texto, 2. Texto...</code></td>
+                                    <td class="icon-element table-right"></td>
+                                    <td>Lista numerada (𝟭. )</td>
+                                </tr>
+                                <tr>
+                                    <td><code>- Texto</code></td>
+                                    <td class="icon-element table-right"></td>
+                                    <td>Lista simple (• )</td>
+                                </tr>
+                                <tr>
+                                    <td><code>+ Texto</code></td>
+                                    <td class="icon-element table-right"></td>
+                                    <td>Lista destacada (● )</td>
+                                </tr>
+                                <tr>
+                                    <td><code>`codigo`</code> o <code>```bloque```</code></td>
+                                    <td class="icon-element table-right"></td>
+                                    <td>Código / bloque de código (𝚖𝚘𝚗𝚘)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>.. Texto</code></td>
+                                    <td class="icon-element table-right"></td>
+                                    <td>Sangría (tabulación)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <!-- Keyboard shortcuts -->
+                        <h3>Atajos de teclado</h3>
+                        <p>Utiliza el teclado para mayor rapidez</p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><strong>ESC</strong></td>
+                                    <td class="icon-element table-right"></td>
+                                    <td>Cerrar widgets</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>CTRL + S</strong></td>
+                                    <td class="icon-element table-right"></td>
+                                    <td>Descargar plantilla</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Panel Lateral -->
+            <aside class="sidebar">
+                <!-- Panel de Plataformas -->
+                <div class="platforms-panel" role="region" aria-labelledby="socialPlatformsTitle">
+                    <h2 class="panel-title icon-element unselectable-item" id="socialPlatformsTitle">Plataformas Sociales</h2>
+
+                    <div class="platform-tabs">
+                        <button class="tab-btn active" id="postsTab" role="button" aria-label="Cambiar a pestaña de posts" aria-pressed="false">
+                            Posts
+                        </button>
+                        <button class="tab-btn" id="bioTab" role="button" aria-label="Cambiar a pestaña de biografías" aria-pressed="false">
+                            Biografías
+                        </button>
+                    </div>
+
+                    <div class="platforms-grid scroll-item" id="platformsGrid">
+                        <!-- Se genera dinámicamente -->
+                    </div>
+                </div>
+
+                <!-- Panel de Análisis -->
+                <div class="analysis-panel" role="region" aria-labelledby="analysisContentTitle">
+                    <h2 class="panel-title icon-element unselectable-item" id="analysisContentTitle">Análisis de Contenido</h2>
+                    <div id="analysisContent" class="unselectable-item">
+                        <div class="analysis-item">
+                            <span class="analysis-label">Palabras</span>
+                            <span class="analysis-value" id="wordCount">0</span>
+                        </div>
+                        <div class="analysis-item">
+                            <span class="analysis-label">Párrafos</span>
+                            <span class="analysis-value" id="paragraphCount">0</span>
+                        </div>
+                        <div class="analysis-item">
+                            <span class="analysis-label">Hashtags</span>
+                            <span class="analysis-value" id="hashtagCount">0</span>
+                        </div>
+                        <div class="analysis-item">
+                            <span class="analysis-label">Menciones</span>
+                            <span class="analysis-value" id="mentionCount">0</span>
+                        </div>
+                        <div class="analysis-item">
+                            <span class="analysis-label">Emojis</span>
+                            <span class="analysis-value" id="emojiCount">0</span>
+                        </div>
+                        <div class="analysis-item">
+                            <span class="analysis-label">Tiempo de lectura</span>
+                            <span class="analysis-value" id="readingTime">0s</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <div class="input-section"> <!-- Área de entrada -->
+            <div class="symbol-picker unselectable-item" id="editorSymbolPicker" role="region" aria-label="Menú de símbolos"> <!-- Contenedor de simbolos (no boton)  -->
+                <div id="symbolContainer">
+                    <!-- Se llena dinámicamente -->
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="editor-textarea-container">
+                    <textarea
+                        id="textInput"
+                        class="scroll-item" 
+                        placeholder="Escribe tu texto aquí..."
+                        role="textbox"
+                        aria-label="Editor de texto principal"
+                        aria-multiline="true"
+                    ></textarea>
+                </div>
+                <div class="save-indicator icon-element" id="saveIndicator" role="status" aria-live="polite"></div>
+                <div class="editor-char-counter with-tooltip unselectable-item" id="editorCharCounter" role="status" aria-live="polite" data-tooltip="100% de compatibilidad en posts">0</div>
+            </div>
+            <div class="input-actions">
+                <button class="input-action-btn symbol-btn solid-btn icon-element" id="inputSymbolBtn" role="button" aria-label="Abrir símbolos" aria-pressed="false"></button>
+                <button class="input-action-btn open-templates-btn solid-btn icon-element" id="inputTemplatesBtn" role="button" aria-label="Abrir plantillas" aria-pressed="false">Plantillas</button>
+                <button class="input-action-btn editor-expand-btn left-divisor solid-btn icon-element" id="editorExpandBtn" role="button" aria-label="Expandir área de texto" aria-pressed="false"></button>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+

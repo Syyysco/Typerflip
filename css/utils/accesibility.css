@@ -1,0 +1,63 @@
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Tooltip de los elementos */
+.with-tooltip::after,
+button[data-tooltip]::after {
+    content: attr(data-tooltip); 
+    position: absolute;
+    z-index: 999999;
+    bottom: 115%; 
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background: #050505;
+    color: #fff; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    font-size: 11px;
+    white-space: nowrap; 
+    opacity: 0; 
+    pointer-events: none;
+    max-width: none;
+    width: max-content;
+    max-height: none;
+    height: max-content;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.with-tooltip:hover::after,
+button[data-tooltip]:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+/* Correcciones de elementos */
+#mainCopyBtn[data-tooltip]::after { left: calc(50% - 7px); }
+#editorCharCounter[data-tooltip]::after { left: calc(-100% + -10px); }
+
+/*
+
+© 2025 Typerflip. All rights reserved.
+
+ - This software is provided under a proprietary license.
+   You may use this software for personal and educational purposes only.
+   Commercial use, modification, and redistribution are strictly prohibited
+   without explicit written permission.
+
+ - For licensing inquiries: syscodev@proton.me
+ - License violations will be prosecuted to the full extent of the law.
+
+ - AUTHOR: Jose Fco. López (aka Sysco)
+        Github:     [ https://github.com/Syyysco ] @Syyysco
+        Portfolio:  [ https://syyysco.github.io ]
+ 
+ - APP: Typerflip - Social editor:
+        Repo:       [ https://github.com/Syyysco/Typerflip ]
+        Web:        [ https://Syyysco.github.io/Typerflip ]
+
+*/
