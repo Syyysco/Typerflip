@@ -1,0 +1,35 @@
+{
+  "name": "typerflip",
+  "version": "1.0.0",
+  "description": "Social text editor",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "start": "node -e \"import('./js/build/server.js').then(m => m.startServer())\"",
+    "min-js": "terser js/*.js -o dist/bundle.min.js ",
+    "prefix-css": "postcss css/**/*.css --config postcss.dev.js --dir css/prefixed/",
+    "min-css": "postcss css/**/*.css --config postcss.prod.js --dir dist/css/", 
+    "minimize-code": "npm run min-js && npm run min-css",
+    "optimize-images": "imagemin assets/images/* --out-dir=dist/images",
+    "optimize-all": "npm run minimize-code && npm run optimize-images"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.5",
+    "autoprefixer": "^10.4.21",
+    "glob": "^10.3.10",
+    "cssnano": "^7.1.1",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "imagemin-cli": "^8.0.0",
+    "imagemin": "^9.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "live-server": "^1.2.2",
+    "terser": "^5.44.0",
+    "express": "^4.18.2",
+    "open": "^9.1.0"
+  }
+}
