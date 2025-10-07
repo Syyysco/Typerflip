@@ -92,12 +92,31 @@ export function adjustOutputHeight({textInputHeight = null, marginTopContainer =
 }
 
 /**
+ * Auxiliary function to prevent actions over the empty output
+ * @export
+ */
+export function outputIsEmpty() {
+    const output = document.querySelector('.formatted-output');
+    const input = document.getElementById('textInput');
+    if (!output || !input || output.classList.contains('with-placeholder') || !input.value.trim()) {
+        return true;
+    }
+
+    return false;
+}
+
+/**
  * Copy to clipboard the `.formatted-output` text
  *
  * @export
  * @async
  */
 export async function copyToClipboard() {
+    if (outputIsEmpty()) {
+        notificationService.show('No hay texto para copiar', 'warning');
+        return;
+    }
+    
     const output = document.querySelector('.formatted-output');
 
     try {
@@ -122,8 +141,7 @@ export async function copyToClipboard() {
  * @param {string} format 
  */
 export function exportText(format) {
-    const output = document.querySelector('.formatted-output');
-    if (!output || !output.textContent) {
+    if (outputIsEmpty()) {
         notificationService.show('No hay texto para exportar', 'warning');
         return;
     }
@@ -504,4 +522,5 @@ export async function initializeDOMUI() {
     generateParticles(); // Generar particulas de fondo
     //setupMobileKeyboard(); // Configuración móvil (se reemplazo por el listener 'touchmove' en el documento y ocultamiento natural, provisionalmente REF: 000ax1)
     bindDOMEvents();
+
 }
