@@ -224,7 +224,7 @@ typerflip/
 <br>
 
 ## RENDIMIENTO
-En los análisis de rendimiento de *Lighthouse* salta a la vista un retardo en la carga de contenido que acaba afectando al rendimiento en el balance general. Esto está reflejado en las [notas de desarrolo](DEVELOPMENT.md) y es ocasionado al ajuste inicial del layout. Esto se solucionará proximamente.
+> En los análisis de rendimiento de *Lighthouse* salta a la vista un retardo en la primera carga de contenido, que acaba afectando al rendimiento en el balance general, y aunque no se transmita directamente en la sensación de uso, puede afectar a la correcta indexación y posicionamiento de la web. Esto está reflejado en las [notas de desarrollo](DEVELOPMENT.md) y es ocasionado en el ajuste inicial del layout. Esto se solucionará proximamente.
 ### Versión escritorio
 | Métrica                | Puntuación |
 |------------------------|------------|
@@ -236,7 +236,7 @@ En los análisis de rendimiento de *Lighthouse* salta a la vista un retardo en l
 <img src="/assets/img/screenshots/lighthouse-desktop.png" alt="Insights of Typerflip web app on desktop" align="center"><br>
 
 ### Versión móvil
-> En versiones móviles el redimiento se viera afectadi en la primera carga al sumar los calculos iniciales del layout con javascript al mismo tiempo que se monitorean los cambios en el viewport. Dando por hecho que la mayoría de dispositivos móviles no cuentan con demasiada GPU. Esto se solucionará proximamente.
+> En versiones móviles el redimiento se ve afectado en la primera carga al sumar los cálculos iniciales del layout (javascript) al mismo tiempo que se monitorean los cambios en el viewport intentando comprobar si es necesario aplicar cambios. Esto se solucionará proximamente.
 | Métrica                | Puntuación |
 |------------------------|------------|
 | Rendimiento            | 59/100     |
