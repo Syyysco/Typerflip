@@ -1,6 +1,8 @@
 <div align="center">
 
   **LANGUAGE**: [Spanish](LÉEME.md)  ·  English
+
+  <img src="/assets/img/banner-onpage.png" alt="Typerflip - Magic formatter for social platforms"><br>
   
   # TYPERFLIP
   Format your ideas for social media
@@ -296,5 +298,6 @@ This project is under a personal use license. This prohibits any commercial use,
   Made with ♥ by Sysco
 
   <img src="/assets/img/profile_banner.png" alt="Sysco logo" width="50"><br>
+
 
 </div> 
