@@ -35,8 +35,6 @@
 - [Licencia](#licencia)
   
 <br>
-  
-
 
 ## CARACTERÍSTICAS CLAVE
 
@@ -222,6 +220,31 @@ typerflip/
       >  - **Referencia de traza:** Identificador único de la traza (importante asegurar que no existe ya). Por ejemplo: `005tr1`.
       >  - **Mensaje:** Texto que se mostrará en la traza (log) en la consola del navegador. Solo texto (no Object, HTMLElement, etc)
       >  - **Datos adicionales:** Información adicional revisable como *Object*, *HTMLElement*, etc.
+
+<br>
+
+## RENDIMIENTO
+En los análisis de rendimiento de *Lighthouse* salta a la vista un retardo en la carga de contenido que acaba afectando al rendimiento en el balance general. Esto está reflejado en las [notas de desarrolo](DEVELOPMENT.md) y es ocasionado al ajuste inicial del layout. Esto se solucionará proximamente.
+### Versión escritorio
+| Métrica                | Puntuación |
+|------------------------|------------|
+| Rendimiento            | 82/100     |
+| Accesibilidad          | 94/100     |
+| Prácticas recomendadas | 100/100    |
+| SEO                    | 100/100    |
+
+<img src="/assets/img/screenshots/lighthouse-desktop.png" alt="Insights of Typerflip web app on desktop" align="center"><br>
+
+### Versión móvil
+> En versiones móviles el redimiento se viera afectadi en la primera carga al sumar los calculos iniciales del layout con javascript al mismo tiempo que se monitorean los cambios en el viewport. Dando por hecho que la mayoría de dispositivos móviles no cuentan con demasiada GPU. Esto se solucionará proximamente.
+| Métrica                | Puntuación |
+|------------------------|------------|
+| Rendimiento            | 59/100     |
+| Accesibilidad          | 92/100     |
+| Prácticas recomendadas | 100/100    |
+| SEO                    | 100/100    |
+
+<img src="/assets/img/screenshots/lighthouse-mobile.png" alt="Insights of Typerflip web app on mobile" align="center"><br>
 
 <br>
 
