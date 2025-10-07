@@ -129,9 +129,9 @@ npm run build
 ## FORMATTING GUIDE
 | Syntax	                      | Result                          |
 |---------------------------------|---------------------------------|
-| `**Text**`                      | Bold                            |
-| `*Text*`                        | Italic                          |
-| `***Text***`                    | Bold italic                     |
+| `**Text**`                      | **Bold**                        |
+| `*Text*`                        | *Italic*                        |
+| `***Text***`                    | ***Bold italic***               |
 | `1. Text, 2. Text...`           | Numbered list (𝟭.)              |
 | `- Text`                        | Simple list (•)                 |
 | `+ Text`                        | Highlighted list (●)            |
@@ -301,3 +301,4 @@ This project is under a personal use license. This prohibits any commercial use,
 
 
 </div> 
+
