@@ -1,3 +1,6 @@
+> [!Important]
+> Esta rama solamente ha sido creada para el funcionamiento de Github Pages
+
 <div align="center">
   
   <img src="/assets/img/banner-onpage.png" alt="Typerflip - Magic formatter for social platforms"><br>
