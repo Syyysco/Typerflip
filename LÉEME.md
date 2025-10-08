@@ -246,6 +246,7 @@ typerflip/
 
 ### VERSIÓN MÓVIL
 > En versiones móviles el redimiento se ve afectado en la primera carga al sumar los cálculos iniciales del layout (javascript) al mismo tiempo que se monitorean los cambios en el viewport intentando comprobar si es necesario aplicar cambios. Esto se solucionará proximamente.
+
 | Métrica                | Puntuación |
 |------------------------|------------|
 | Rendimiento            | 59/100     |

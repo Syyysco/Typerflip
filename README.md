@@ -245,6 +245,7 @@ typerflip/
 
 ### MOBILE
 > On mobile, performance is affected on the first load due to initial layout calculations (JavaScript) combined with monitoring viewport changes to determine if adjustments are needed. This will be fixed soon.
+
 | Metric                 | Score      |
 |------------------------|------------|
 | Performance            | 59/100     |
