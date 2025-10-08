@@ -67,6 +67,7 @@
   > - Mentions
   > - Emojis
   > - Reading time
+  > - URLs
 - **Symbols & emojis** - Quick access to special characters
 - **Template system** - Save and reuse your favorite formats
   > - Default templates for posts and bios

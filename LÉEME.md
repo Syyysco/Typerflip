@@ -67,6 +67,7 @@
   > - Menciones
   > - Emojis
   > - Tiempo de lectura
+  > - URLs
 - **Símbolos y emojis** - Acceso rápido a caracteres especiales
 - **Sistema de plantillas** - Guarda y reutiliza tus formatos favoritos
   > - Plantillas predeterminadas para posts y biografías
