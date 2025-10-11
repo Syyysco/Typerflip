@@ -14,7 +14,7 @@
 > [!Tip]
 > Los IDs de referencia (REF: XXXXXX) son inluidos en el codigo bruto de determinados módulos para facilitar la búsqueda utilizando `grep` u otros métodos. Estas referencias a veces tambien serán incluidas en el sistema de debugging.
 
-1. [**REF: 000s1**] En versión móvil había un problema al ajustar el tamaño de , el viewport se mueve en el recálculo. Se implementó `window.addEventListener('scroll', () => storageService.saveScrollPosition(window.scrollY));` como método provisional utilizando una nueva función de control de guardado para solucionar el offset acumulativo.
+1. [**REF: 000s1**] En versión móvil había un problema al ajustar el tamaño de `.output-section`, el viewport se mueve en el recálculo. Se implementó `window.addEventListener('scroll', () => storageService.saveScrollPosition(window.scrollY));` como método provisional utilizando una nueva función de control de guardado para solucionar el offset acumulativo.
 
 2. [**REF: 000ax1**] En versión móvil, cuando `#textInput` obtiene el foco y aparece el teclado, si el usuario hace scroll hacia arriba, `.input-section` se desplazaba hacia abajo junto con el contenido (hasta su posición original `bottom: 0`). Se implementó la función `handleClickOutside` en el manejador `keyboardHandler.js` para evitar esto de manera provisional.
 
@@ -53,4 +53,5 @@
           }
         }
         ```  
+
 
