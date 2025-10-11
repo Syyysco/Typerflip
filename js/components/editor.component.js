@@ -508,13 +508,34 @@ class EditorComponent {
      * Hanlde input events on `#textInput` - this function is called initally
      */
     handleTextareaInput() {
+        const scrollTop = this.elements.textInput.scrollTop; // // Prevenir el scroll automático del navegador
+        
         this.autoResizeTextarea();
         this.analyzeContent(this.elements.textInput.value);
         this.updateOutput();
 
-        setTimeout(() => {
+        // Guardar el scroll actual y restaurarlo después
+        requestAnimationFrame(() => {
+            this.elements.textInput.scrollTop = scrollTop;
             this.fixView();
-        }, 0);
+        });
+    }
+
+    /**
+     * Handle textarea keydown events
+     *
+     * @param {Event} event - keydown event to determinate key
+     */
+    handleTextareaKeydown(event) {
+        const scrollTop = this.elements.textInput.scrollTop; // // Prevenir el scroll automático del navegador
+        // Manejar teclas de flecha para scroll suave
+        if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Home', 'End', 'PageUp', 'PageDown'].includes(event.key)) {
+            // Guardar el scroll actual y restaurarlo después
+            requestAnimationFrame(() => {
+                this.elements.textInput.scrollTop = scrollTop;
+                this.fixView();
+            });
+        }
     }
 
     /**
@@ -587,21 +608,6 @@ class EditorComponent {
         } finally {
             // Limpiar el elemento temporal
             document.body.removeChild(tempDiv);
-        }
-    }
-
-    
-    /**
-     * Handle textarea keydown events
-     *
-     * @param {Event} event - keydown event to determinate key
-     */
-    handleTextareaKeydown(event) {
-        // Manejar teclas de flecha para scroll suave
-        if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Home', 'End', 'PageUp', 'PageDown'].includes(event.key)) {
-            setTimeout(() => {
-                this.fixView();
-            }, 0);
         }
     }
     
