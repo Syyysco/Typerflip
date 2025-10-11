@@ -11,7 +11,8 @@
 ---
 
 ## Bugs conocidos
-> NOTA: Los IDs de referencia (REF: XXXXXX) son inluidos en el codigo bruto de determinados módulos para facilitar la búsqueda utilizando `grep` u otros métodos. Estas referencias a veces tambien serán incluidas en el sistema de debugging.
+> [!Tip]
+> Los IDs de referencia (REF: XXXXXX) son inluidos en el codigo bruto de determinados módulos para facilitar la búsqueda utilizando `grep` u otros métodos. Estas referencias a veces tambien serán incluidas en el sistema de debugging.
 
 1. [**REF: 000s1**] En versión móvil había un problema al ajustar el tamaño de , el viewport se mueve en el recálculo. Se implementó `window.addEventListener('scroll', () => storageService.saveScrollPosition(window.scrollY));` como método provisional utilizando una nueva función de control de guardado para solucionar el offset acumulativo.
 
@@ -32,3 +33,24 @@
 9. **En dispositivos móviles** Cuando se añade un símbolo desde `.symbol-picker` y se enfoca `#textInput`, `KeyboardHandler` no actua y el scroll no se corrige.
 
 10. Hay un pequeño problema de redimensionamiento de `.output-section` al escribir en el input principal (al redimensionar `#textInput`) que permite que al aumentar/disminuir el tamaño antes de que termine el último redimensionamiento, el último cambio no se aplique por que está procesando el último y hay una regla de seguridad que bloquea estos comportamientos **REF: 000ot1**.
+
+11. Hay un error en la disposición del texto de `.formatted-output` en **dispositivos móviles** que al utilizar símbolos compuestos como **`áéíóúüñÁÉÍÓÚÜÑ`** no se muestren correctamente y se representen con "**⊠**". Esto no es crítico, dado que al copiar el elemento se mantiene intacto.
+    
+    **Soluciones descartadas:**
+      - Se probó importando una fuente más compatible como `Segoe UI Emoji` de manera local.
+      - Se implementó el siguiente css:
+        ```css
+        .formatted-output {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          text-rendering: optimizeLegibility;
+        }
+
+        @media (max-width: 768px) {
+          .formatted-output {
+            font-variant-ligatures: none;
+            font-feature-settings: "kern" 1, "liga" 0;
+          }
+        }
+        ```  
+
