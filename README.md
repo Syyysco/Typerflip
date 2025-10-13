@@ -223,10 +223,10 @@ typerflip/
         debugSystem.disable(); // Disable debug
         ```
         > The required parameters are:
-        > **Error type:** error, warning, info, success. If left empty, info will be used as default.
-        > **Trace reference:** Unique identifier for the trace (ensure it does not already exist). Example: 005tr1.
-        > **Message:** Text that will be shown in the console trace. Plain text only (not Object, HTMLElement, etc).
-        > **Additional data:** Extra information such as an Object, HTMLElement, etc.
+        > - **Error type:** error, warning, info, success. If left empty, info will be used as default.
+        > - **Trace reference:** Unique identifier for the trace (ensure it does not already exist). Example: 005tr1.
+        > - **Message:** Text that will be shown in the console trace. Plain text only (not Object, HTMLElement, etc).
+        > - **Additional data:** Extra information such as an Object, HTMLElement, etc.
 
 <br>
 
@@ -303,4 +303,5 @@ This project is under a personal use license. This prohibits any commercial use,
 
 
 </div> 
+
 
