@@ -26,15 +26,15 @@
 
 6. Hace falta añadir un evento de **redimensionamiento en la ventana** (`window.addEventListener('resize' ..`) y otro en el viewport que llame a `adjustOutputHeight()` sin crear conflicto con `keyboardHandler.js`. Puede que al implementar esta llamada, la sección se redimensione al cambiar el tamaño del viewport mostrando el teclado o en otro tipo de redimensiones interferentes o superpuestas de manera predeterminada.
 
-7. Hay un problema **cuando el teclado está visible** relacionado con el manejor del **overflow** de los elementos flotantes en **dispositivos móviles** que bloquea el scroll de los elementos como `#textInput` y los `.symbol-grid` del picker de símbolos. Esto, además de bloquear el scroll de dichos elementos, crea la posibilidad de que el `.input-section` se pueda deslizar junto a la pagina en deslizamientos verticales. Este problema se debe a como los navagadores móviles manejan los elementos fijados, y cuando el teclado está visible, el navegador sigue considerando que `.input-section` se encuentra en `bottom: 0` sobre el viewport (debajo del teclado) aunque no lo esté (el mismo navegador es el que lo reposiciona en `bottom: 0` sobre el viewport).
+7. Hay un problema **cuando el teclado está visible** relacionado con el manejo del **overflow** de los elementos flotantes en **dispositivos móviles** que bloquea el scroll de los elementos como `#textInput` y los `.symbol-grid`. Esto, además de bloquear el scroll de dichos elementos, crea la posibilidad de que el `.input-section` se pueda deslizar junto a la pagina en deslizamientos verticales. Este problema se debe a como los navagadores móviles manejan los elementos fijados, y cuando el teclado está visible, el navegador sigue considerando que `.input-section` se encuentra en `bottom: 0` sobre el viewport (debajo del teclado) aunque no lo esté (y el mismo navegador es el que lo reposiciona en `bottom: 0` sobre el viewport).
 
-8. [**REF: 000ay1**] Cuando se muestra el teclado **en dispositivos móviles**, el `.symbol-picker` puede salir de la pantalla en dispositivos móviles si `#textInput` está expandido.
+8. [**REF: 000ay1**] Cuando se muestra el teclado **en dispositivos móviles**, el `.symbol-picker` puede salir de la pantalla si `#textInput` está expandido.
 
 9. **En dispositivos móviles** Cuando se añade un símbolo desde `.symbol-picker` y se enfoca `#textInput`, `KeyboardHandler` no actua y el scroll no se corrige.
 
-10. Hay un pequeño problema de redimensionamiento de `.output-section` al escribir en el input principal (al redimensionar `#textInput`) que permite que al aumentar/disminuir el tamaño antes de que termine el último redimensionamiento, el último cambio no se aplique por que está procesando el último y hay una regla de seguridad que bloquea estos comportamientos **REF: 000ot1**.
+10. Hay un pequeño problema de redimensionamiento de `.output-section` al escribir en el input principal (al redimensionar `#textInput`) que permite que al aumentar/disminuir el tamaño antes de que termine el último redimensionamiento, el último cambio no se aplique por que está procesando el último, y hay una regla de seguridad que bloquea estos comportamientos **REF: 000ot1**.
 
-11. Hay un error en la disposición del texto de `.formatted-output` en **dispositivos móviles** que al utilizar símbolos compuestos como **`áéíóúüñÁÉÍÓÚÜÑ`** no se muestren correctamente y se representen con "**⊠**". Esto no es crítico, dado que al copiar el elemento se mantiene intacto.
+11. Hay un error en la disposición del texto de `.formatted-output` en **dispositivos móviles**, ocasionando que al utilizar símbolos compuestos como **`áéíóúüñÁÉÍÓÚÜÑ`**, estos no se muestren correctamente y se representen con "**⊠**". Esto no es crítico, dado que al copiar el elemento se mantiene intacto.
     
     **Soluciones descartadas:**
       - Se probó importando una fuente más compatible como `Segoe UI Emoji` de manera local.
@@ -53,5 +53,6 @@
           }
         }
         ```  
+
 
 
